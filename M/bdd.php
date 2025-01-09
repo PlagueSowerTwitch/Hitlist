@@ -7,7 +7,7 @@ class Bdd{
         try
         {
            // $bdd = new PDO("mysql:host=localhost;port=3307;dbname=news","login","mdp");
-            $bdd = new PDO("mysql:host=localhost;port=3306;dbname=guest","root","root");
+            $bdd = new PDO("mysql:host=localhost;port=3306;dbname=hitlist","root","root");
             return $bdd;
         }
         catch(Exception $e)

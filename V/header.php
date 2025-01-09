@@ -12,7 +12,7 @@
 
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.php">Accueil</a>
+      <a class="navbar-brand" href="index.php">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -23,26 +23,31 @@
             <a class="nav-link" href="?page=hitlist">Hitlist</a>
           </li>
 
-          <?php if(!isset($_SESSION['nom'])) {  ?>
+          <?php if(!isset($_SESSION['nom'])) { ?>
           <li class="nav-item">
-            <a class="nav-link" href="?page=inscription">Inscription</a>
+            <a class="nav-link" href="?page=inscription">Sign Up</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="?page=connexion">Connexion</a>
+            <a class="nav-link" href="?page=connexion">Sign In</a>
           </li>
           <?php } else { ?>
             <li class="nav-item">
-            <a  class="nav-link" href=""><?=$_SESSION['nom']?></a>
+            <a class="nav-link" href=""><?=$_SESSION['nom']?></a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="?page=deconnexion">Deconnexion</a>
+            <a class="nav-link" href="?page=deconnexion">Unsign</a>
           </li>
           <?php } ?>
 
         </ul>
 
+        <img src="V/IMG/CIA.png" alt="Logo CIA" class="ms-auto" style="height: 50px;">
       </div>
     </div>
   </nav>
+
+</body>
+
+</html>

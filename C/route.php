@@ -23,13 +23,12 @@ switch ($page) {
         include_once 'C/hitmancontrol.php';
         $controller = new HitmanController();
         $controller->connexion();
+        try {
+            $controller->connexion();
+        } catch (Exception $e) {
+            echo "Erreur : " . $e->getMessage();
+        }
         break;
-        
-    case 'deconnexion':
-        $_SESSION = array();
-        header("Location: index.php");
-        break;
-
 
     default:
         include 'V/404.php';

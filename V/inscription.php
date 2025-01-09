@@ -7,7 +7,7 @@
     <link href="V/CSS/connexion.css" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Inscription</h1>
+    <h1>Sign Up</h1>
 
     <form id="inscriptionForm">
         <label for="nom">Codename :</label>
@@ -16,7 +16,7 @@
         <label for="mdp">Password :</label>
         <input type="password" id="mdp" name="mdp" required> <br>
 
-        <button type="submit">S'inscrire</button>
+        <button type="submit">Sign Up</button>
     </form>
 
     <p id="errorMessage" style="color: red; display: none;"></p>
@@ -45,3 +45,12 @@
     </script>
 </body>
 </html>
+<?php
+if (isset($_SESSION['hitman_id']) && isset($_SESSION['hitman_codename'])) {
+    echo "Vous êtes connecté en tant que " . $_SESSION['hitman_codename'];
+} else {
+    echo "Vous n'êtes pas connecté.";
+}
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";

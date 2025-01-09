@@ -1,77 +1,52 @@
 <?php
-
 include_once 'bdd.php';
 
-class Hitman {
-    private $db;
+class Hitmanmodel {
+    private $bdd;
 
     public function __construct() {
-        $this->db = Bdd::connexion();
+        $this->bdd = Bdd::connexion();
+    }
+    
+    public function inscription($codename, $email, $password, $nationality, $description = null, $image = null) 
+{
+    $query = $this->bdd->prepare(
+        "INSERT INTO hitman (codename, email, password, nationality, description, image) 
+         VALUES (:codename, :email, :password, :nationality, :description, :image)"
+    );
+    return $query->execute([
+        ':codename' => $codename,
+        ':email' => $email,
+        ':password' => $password,
+        ':nationality' => $nationality,
+        ':description' => $description,
+        ':image' => $image
+    ]);
+}
+
+
+    public function getHitmanByEmail($hitmanEmail) {
+        $gethitman = $this->bdd->prepare("SELECT * FROM hitman WHERE email = ?");
+        $gethitman->execute([$hitmanEmail]);
+        return $gethitman->fetch(PDO::FETCH_ASSOC);
     }
 
-    /**
-     * 
-     * @param string $email
-     * @param string $password
-     * @return array|bool
-     */
-    public function connexion($email, $password) {
+}
+/*public function connexion($email, $password) {
         $query = "SELECT * FROM hitman WHERE email = :email";
-        $stmt = $this->db->prepare($query);
+        $stmt = $this->bdd->prepare($query);
         $stmt->bindParam(':email', $email);
-
-        if ($stmt->execute() && $stmt->rowCount() === 1) {
+    
+        if ($stmt->execute()) {
             $hitman = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if (password_verify($password, $hitman['password'])) {
+    
+            if ($hitman && password_verify($password, $hitman['password'])) {
                 return $hitman;
+            } else {
+                echo "Mot de passe incorrect pour " . $email;
             }
         }
-
-        return false;
-    }
-
-    /**
-     *
-     * @param string $codename
-     * @param string $email
-     * @param string $password
-     * @param string $nationality
-     * @param string|null $description
-     * @param string|null $image
-     * @return bool
-     */
-    public function inscription($codename, $email, $password, $nationality, $description = null, $image = null) {
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        $query = "INSERT INTO hitman (codename, email, password, nationality, description, image) 
-                  VALUES (:codename, :email, :password, :nationality, :description, :image)";
-        $stmt = $this->db->prepare($query);
-
-        $stmt->bindParam(':codename', $codename);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $hashedPassword);
-        $stmt->bindParam(':nationality', $nationality);
-        $stmt->bindParam(':description', $description);
-        $stmt->bindParam(':image', $image);
-
-        return $stmt->execute();
-    }
-
-    /**
-     *
-     * @param int $hitmanId
-     * @return array|bool
-     */
-    public function getHitmanById($hitmanId) {
-        $query = "SELECT * FROM hitman WHERE hitman_id = :hitman_id";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':hitman_id', $hitmanId);
-
-        if ($stmt->execute() && $stmt->rowCount() === 1) {
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        }
-
-        return false;
-    }
-}
+    
+        return false; // Connexion échouée
+    }*/
+?>
