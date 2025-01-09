@@ -1,3 +1,7 @@
+body {
+    background-image: linear-gradient(to bottom right, black, gray);
+    }
+
 h1 {
     color: #0077cc;
     text-align: center;
@@ -15,12 +19,32 @@ form {
     margin-left: 40%;
 }
 
-input, input[type="password"] {
+input, input[type="password"], input[type="email"], input[type="file"], select, textarea {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #cccccc;
     border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: Arial, sans-serif;
+}
+
+select {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    border: none;
+    padding: 0;
     font-size: 14px;
 }
 

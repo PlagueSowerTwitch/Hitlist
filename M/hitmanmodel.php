@@ -32,21 +32,4 @@ class Hitmanmodel {
     }
 
 }
-/*public function connexion($email, $password) {
-        $query = "SELECT * FROM hitman WHERE email = :email";
-        $stmt = $this->bdd->prepare($query);
-        $stmt->bindParam(':email', $email);
-    
-        if ($stmt->execute()) {
-            $hitman = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-            if ($hitman && password_verify($password, $hitman['password'])) {
-                return $hitman;
-            } else {
-                echo "Mot de passe incorrect pour " . $email;
-            }
-        }
-    
-        return false; // Connexion échouée
-    }*/
 ?>

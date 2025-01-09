@@ -10,14 +10,34 @@
     <h1>Sign Up</h1>
 
     <form id="inscriptionForm">
-        <label for="nom">Codename :</label>
-        <input type="text" id="nom" name="nom" required> <br>
+    <label for="nom">Codename :</label>
+    <input type="text" id="nom" name="nom" required> <br>
 
-        <label for="mdp">Password :</label>
-        <input type="password" id="mdp" name="mdp" required> <br>
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required> <br>
 
-        <button type="submit">Sign Up</button>
-    </form>
+    <label for="nationality">Nationality :</label>
+    <select id="nationality" name="nationality" required>
+        <option value="" disabled selected>Select your nationality</option>
+        <option value="mx">Mexican</option>
+        <option value="us">American</option>
+        <option value="it">Italian</option>
+        <option value="ru">Russian</option>
+        <option value="other">Other</option>
+    </select> <br>
+
+    <label for="description">Description :</label>
+    <textarea id="description" name="description" rows="4" cols="50" placeholder="Write about yourself..."></textarea> <br>
+
+    <label for="image">Profile Image :</label>
+    <input type="file" id="image" name="image" accept="image/*"> <br>
+
+    <label for="mdp">Password :</label>
+    <input type="password" id="mdp" name="mdp" required> <br>
+
+    <button type="submit">Sign Up</button>
+</form>
+
 
     <p id="errorMessage" style="color: red; display: none;"></p>
 
