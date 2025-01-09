@@ -7,21 +7,24 @@ switch ($page) {
         include 'V/accueil.php';
         break;
     
-    case 'livret':
-        include_once 'control/bookcontrol.php';
-        //$messages = new messagescontroller();
-        $messages->getmessages();
+    case 'hitlist':
+        include_once 'C/targetcontrol.php';
+        $controller = new TargetController();
+        $controller->index();
         break;
+
     case 'inscription':
-        include_once 'control/usercontrol.php';
-        //$users = new UsersController;
-        $users->inscription();
+        include_once 'C/hitmancontrol.php';
+        $controller = new HitmanController();
+        $controller->inscription();
         break;
+    
     case 'connexion':
-        include_once 'control/usercontrol.php';
-        //$users = new UsersController;
-        $users->connexion();
+        include_once 'C/hitmancontrol.php';
+        $controller = new HitmanController();
+        $controller->connexion();
         break;
+        
     case 'deconnexion':
         $_SESSION = array();
         header("Location: index.php");
@@ -29,5 +32,5 @@ switch ($page) {
 
 
     default:
-        include 'vue/404.php';
+        include 'V/404.php';
 }

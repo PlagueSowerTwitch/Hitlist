@@ -20,7 +20,7 @@
         <ul class="navbar-nav me-auto">
 
           <li class="nav-item">
-            <a class="nav-link" href="?page=livret">Livre d'or</a>
+            <a class="nav-link" href="?page=hitlist">Hitlist</a>
           </li>
 
           <?php if(!isset($_SESSION['nom'])) {  ?>
