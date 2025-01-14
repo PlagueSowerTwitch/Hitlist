@@ -23,6 +23,10 @@
             <a class="nav-link" href="?page=hitlist">Hitlist</a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="?page=FAQ">FAQ</a>
+          </li>
+
           <?php if(!isset($_SESSION['nom'])) { ?>
           <li class="nav-item">
             <a class="nav-link" href="?page=inscription">Sign Up</a>

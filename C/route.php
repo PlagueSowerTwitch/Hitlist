@@ -7,6 +7,10 @@ switch ($page) {
         include 'V/accueil.php';
         break;
     
+    case 'FAQ';
+        include 'V/FAQ.php';
+        break;
+
     case 'hitlist':
         include_once 'C/targetcontrol.php';
         $controller = new TargetController();

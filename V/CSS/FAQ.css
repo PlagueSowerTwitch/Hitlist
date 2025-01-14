@@ -1,0 +1,109 @@
+body {
+    background-image: linear-gradient(to bottom right, black, gray);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+    margin: 3rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 10%;
+}
+
+h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(124, 124, 124, 0.8);
+    max-width: 40rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+    background-clip: padding-box;
+    margin-left: 10%;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: auto;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.Part2 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.Part2 img{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+    background-clip: padding-box;
+    margin-right: 5%;
+    margin-left: 10%;
+}
+
+.Part2 h2{
+    color: rgb(105, 0, 0);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(124, 124, 124, 0.8);
+    max-width: 20rem;
+    margin-right: 5%;
+}
+
+h3{
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(238, 0, 0, 0.8);
+    max-width: 40rem;
+}
